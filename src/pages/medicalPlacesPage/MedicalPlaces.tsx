@@ -14,8 +14,6 @@ const getDistinctVoivodeships = (medicalPlacesJSON as MedicalPlace[]).reduce<
   return [...acc, curr["Województwo"]];
 }, []);
 
-console.log({ getDistinctVoivodeships });
-
 export const MedicalPlacesPage = () => {
   const [vFilter, setVFilter] = useState("");
 
@@ -33,29 +31,22 @@ export const MedicalPlacesPage = () => {
     <>
       <Select
         onChange={({ currentTarget: { value } }) => {
-          console.log(value);
           setVFilter(value || "");
         }}
         placeholder="Select option"
       >
         {getDistinctVoivodeships.map((v) => (
-          <option
-            onChange={() => {
-              console.log(v);
-            }}
-            key={v}
-            value={v}
-          >
+          <option key={v} value={v}>
             {v}
           </option>
         ))}
       </Select>
 
-      {data.map((d) => {
+      {data.map((d, index) => {
         return (
-          <>
+          <div key={index}>
             <Text>{d["Adres udzielania świadczeń"]}</Text>
-          </>
+          </div>
         );
       })}
     </>

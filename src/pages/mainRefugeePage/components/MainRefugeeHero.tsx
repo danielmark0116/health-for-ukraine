@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   createIcon,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 
 export default function MainRefugeeHero() {
@@ -43,6 +44,8 @@ export default function MainRefugeeHero() {
             position={"relative"}
           >
             <Button
+              as={Link}
+              to="/places"
               colorScheme={"green"}
               bg={"green.400"}
               rounded={"full"}
