@@ -1,9 +1,20 @@
 {
   "mainMedicPage": {
     "heroTitle": "Jesteś medykiem i <1 /><2>chcesz pomóc?</2>",
-    "heroSubtitle": "Wypełnij formularz lorem ipsum...",
+    "heroSubtitle": "Wypełnij formularz",
     "ctaButton": "Formularz!",
     "moreInfo": "Więcej informacji",
     "wannaHelpLabel": "I want to help!"
+  },
+  "mainRefugeePage": {
+    "heroTitle": "Przyjechałem do Polski i <1 /><2>potrzebuję pomocy</2>",
+    "heroSubtitle": "Powiedz nam jakiego rodzaju pomocy potrzebujesz! Wypełnij poniższy formularz",
+    "ctaButton": "Znajdź pomoc!",
+    "moreInfo": "Więcej informacji",
+    "needHelpLabel": "Kliknij!"
+  },
+  "navigation": {
+    "forRefugee": "Potrzebuję pomocy!",
+    "forMedic": "Chcę pomóc!"
   }
 }

@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   HamburgerIcon,
   CloseIcon,
@@ -22,6 +23,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -73,28 +75,28 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            // href={'#'}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
+          {/* <Button */}
+          {/*   as={"a"} */}
+          {/*   fontSize={"sm"} */}
+          {/*   fontWeight={400} */}
+          {/*   variant={"link"} */}
+          {/*   href={"#"} */}
+          {/* > */}
+          {/*   Sign In */}
+          {/* </Button> */}
+          {/* <Button */}
+          {/*   display={{ base: "none", md: "inline-flex" }} */}
+          {/*   fontSize={"sm"} */}
+          {/*   fontWeight={600} */}
+          {/*   color={"white"} */}
+          {/*   bg={"pink.400"} */}
+          {/*   // href={'#'} */}
+          {/*   _hover={{ */}
+          {/*     bg: "pink.300", */}
+          {/*   }} */}
+          {/* > */}
+          {/*   Sign Up */}
+          {/* </Button> */}
         </Stack>
         <ColorModeSwitcher display={{ base: "none", md: "inline-flex" }} />
       </Flex>
@@ -107,6 +109,7 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
+  const { t } = useTranslation();
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
@@ -117,19 +120,20 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Link>
+              <RouterLink to={navItem.href || "/"}>
+                <Box
+                  p={2}
+                  fontSize={"sm"}
+                  fontWeight={500}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: "none",
+                    color: linkHoverColor,
+                  }}
+                >
+                  {t(navItem.label as any)}
+                </Box>
+              </RouterLink>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -156,39 +160,42 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  const { t } = useTranslation();
+
   return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
+    <RouterLink to={href || "/"}>
+      <Link
+        role={"group"}
+        display={"block"}
+        p={2}
+        rounded={"md"}
+        _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      >
+        <Stack direction={"row"} align={"center"}>
+          <Box>
+            <Text
+              transition={"all .3s ease"}
+              _groupHover={{ color: "pink.400" }}
+              fontWeight={500}
+            >
+              {t(label as any)}
+            </Text>
+            <Text fontSize={"sm"}>{subLabel}</Text>
+          </Box>
+          <Flex
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
+            transform={"translateX(-10px)"}
+            opacity={0}
+            _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+            justify={"flex-end"}
+            align={"center"}
+            flex={1}
           >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
+            <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          </Flex>
+        </Stack>
+      </Link>
+    </RouterLink>
   );
 };
 
@@ -209,34 +216,37 @@ const MobileNav = () => {
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
+  const { t } = useTranslation();
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
+        <RouterLink to={href || "/"}>
+          <>
+            <Text
+              fontWeight={600}
+              color={useColorModeValue("gray.600", "gray.200")}
+            >
+              {t(label as any)}
+            </Text>
+            {children && (
+              <Icon
+                as={ChevronDownIcon}
+                transition={"all .25s ease-in-out"}
+                transform={isOpen ? "rotate(180deg)" : ""}
+                w={6}
+                h={6}
+              />
+            )}
+          </>
+        </RouterLink>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
@@ -250,9 +260,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
+              <RouterLink to={child.href || "/"}>
+                <Box py={2}>{t(child.label as any)}</Box>
+              </RouterLink>
             ))}
         </Stack>
       </Collapse>
@@ -299,11 +309,11 @@ const NAV_ITEMS: Array<NavItem> = [
   //   ],
   // },
   {
-    label: "Dla medyka",
-    href: "#",
+    label: "navigation.forMedic",
+    href: "/medic",
   },
   {
-    label: "Dla Potrzebującego",
-    href: "#",
+    label: "navigation.forRefugee",
+    href: "/",
   },
 ];

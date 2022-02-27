@@ -1,5 +1,4 @@
 import { ChakraProvider, theme } from "@chakra-ui/react";
-import { Layout } from "./layout/Layout";
 import translationsPL from "./locales/pl/translations.json";
 import translationsUA from "./locales/ua/translations.json";
 
@@ -27,8 +26,6 @@ i18n
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Layout>
-      <Router />
-    </Layout>
+    <Router />
   </ChakraProvider>
 );
