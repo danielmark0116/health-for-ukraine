@@ -23,6 +23,7 @@ import {
 } from "@chakra-ui/icons";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "../components/LanguageSwitcher/LanguageSwitcher";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -209,6 +210,7 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <LanguageSwitcher />
     </Stack>
   );
 };
