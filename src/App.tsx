@@ -1,38 +1,36 @@
-import * as React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import { ChakraProvider, theme } from "@chakra-ui/react";
+import { Layout } from "./layout/Layout";
+import { MainMedic } from "./pages/mainMedic/MainMedic";
+import translationsPL from "./locales/pl/translations.json";
+import translationsUA from "./locales/ua/translations.json";
+
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    resources: {
+      pl: {
+        translation: translationsPL,
+      },
+      ua: {
+        translation: translationsUA,
+      },
+    },
+    lng: "pl", // if you're using a language detector, do not define the lng option
+    fallbackLng: "pl",
+    interpolation: {
+      escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
+    },
+  });
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+    <Layout>
+      <>
+        <MainMedic />
+      </>
+    </Layout>
   </ChakraProvider>
-)
+);
