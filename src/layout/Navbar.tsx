@@ -209,10 +209,14 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack position={"fixed"} backgroundColor={"green"} width="100%">
       <Stack
+        position="absolute"
+        top={20}
+        left={0}
+        width="100%"
         bg={useColorModeValue("white", "gray.800")}
         p={4}
+        zIndex={1000}
         display={{ md: "none" }}
       >
         <ColorModeSwitcher justifySelf="flex-end" />
@@ -223,7 +227,6 @@ const MobileNav = () => {
           <LanguageSwitcher />
         </Box>
       </Stack>
-    </Stack>
   );
 };
 
