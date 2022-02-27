@@ -106,7 +106,11 @@ export default function Navbar() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav
+          onClick={() => {
+            onToggle();
+          }}
+        />
       </Collapse>
     </Box>
   );
@@ -207,30 +211,35 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onClick }: any) => {
   return (
-      <Stack
-        position="absolute"
-        top={20}
-        left={0}
-        width="100%"
-        bg={useColorModeValue("white", "gray.800")}
-        p={4}
-        zIndex={1000}
-        display={{ md: "none" }}
-      >
-        <ColorModeSwitcher justifySelf="flex-end" />
-        {NAV_ITEMS.map((navItem) => (
-          <MobileNavItem key={navItem.label} {...navItem} />
-        ))}
-        <Box display={{ base: "inline-flex", md: "none" }}>
-          <LanguageSwitcher />
-        </Box>
-      </Stack>
+    <Stack
+      position="absolute"
+      top={20}
+      left={0}
+      width="100%"
+      bg={useColorModeValue("white", "gray.800")}
+      p={4}
+      zIndex={1000}
+      display={{ md: "none" }}
+    >
+      <ColorModeSwitcher justifySelf="flex-end" />
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem onClick={onClick} key={navItem.label} {...navItem} />
+      ))}
+      <Box display={{ base: "inline-flex", md: "none" }}>
+        <LanguageSwitcher />
+      </Box>
+    </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({
+  label,
+  children,
+  href,
+  onClick,
+}: NavItem & { onClick: () => void }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { t } = useTranslation();
 
@@ -244,7 +253,12 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: "none",
         }}
       >
-        <RouterLink to={href || "/"}>
+        <RouterLink
+          to={href || "/"}
+          onClick={() => {
+            onClick();
+          }}
+        >
           <>
             <Text
               fontWeight={600}
