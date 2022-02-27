@@ -98,6 +98,7 @@ export default function Navbar() {
           {/*   Sign Up */}
           {/* </Button> */}
         </Stack>
+        <LanguageSwitcher />
         <ColorModeSwitcher display={{ base: "none", md: "inline-flex" }} />
       </Flex>
 
