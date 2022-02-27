@@ -1,0 +1,1 @@
+export const MEDIC_GOOGLE_REGISTRATION_FORM = "https://docs.google.com/forms/d/e/1FAIpQLScGze90bsgIALGKNrp8Hhpty6eYnI7zJ_SwB-qEoBrJ-kcFDQ/viewform?fbclid=IwAR0w3mx1gBFfBh4g0KjEKw17oSqeYtq6ykqQbdyTIrL7LeMNptyDgca_MXU"
