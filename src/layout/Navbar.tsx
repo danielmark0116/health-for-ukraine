@@ -29,7 +29,7 @@ export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box maxH={"100px"}>
+    <Box maxH={"100px"} overflow="hidden">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -99,7 +99,9 @@ export default function Navbar() {
           {/*   Sign Up */}
           {/* </Button> */}
         </Stack>
-        <LanguageSwitcher />
+        <Box display={{ base: "none", md: "inline-flex" }}>
+          <LanguageSwitcher />
+        </Box>
         <ColorModeSwitcher display={{ base: "none", md: "inline-flex" }} />
       </Flex>
 
@@ -127,7 +129,11 @@ const DesktopNav = () => {
                   p={2}
                   fontSize={"sm"}
                   fontWeight={500}
-                  color={linkColor}
+                  backgroundColor={
+                    navItem.href === "/contact" ? "green.400" : undefined
+                  }
+                  rounded="md"
+                  color={navItem.href === "/contact" ? "white" : linkColor}
                   _hover={{
                     textDecoration: "none",
                     color: linkHoverColor,
@@ -203,16 +209,20 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
-      <ColorModeSwitcher justifySelf="flex-end" />
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-      <LanguageSwitcher />
+    <Stack position={"fixed"} backgroundColor={"green"} width="100%">
+      <Stack
+        bg={useColorModeValue("white", "gray.800")}
+        p={4}
+        display={{ md: "none" }}
+      >
+        <ColorModeSwitcher justifySelf="flex-end" />
+        {NAV_ITEMS.map((navItem) => (
+          <MobileNavItem key={navItem.label} {...navItem} />
+        ))}
+        <Box display={{ base: "inline-flex", md: "none" }}>
+          <LanguageSwitcher />
+        </Box>
+      </Stack>
     </Stack>
   );
 };
@@ -318,5 +328,9 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "navigation.forRefugee",
     href: "/",
+  },
+  {
+    label: "navigation.contact",
+    href: "/contact",
   },
 ];

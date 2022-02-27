@@ -25,7 +25,7 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <Stack direction="row" display={{ base: "none", md: "inline-flex" }}>
+    <Stack direction="row" display={{}}>
       {items.map(({ emoji, lang }) => {
         return (
           <Badge

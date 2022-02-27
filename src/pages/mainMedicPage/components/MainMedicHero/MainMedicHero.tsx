@@ -57,9 +57,9 @@ export default function MainMedicHero() {
             >
               {t("mainMedicPage.ctaButton")}
             </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              {t("mainMedicPage.moreInfo")}
-            </Button>
+            {/* <Button variant={"link"} colorScheme={"blue"} size={"sm"}> */}
+            {/*   {t("mainMedicPage.moreInfo")} */}
+            {/* </Button> */}
             <Box>
               <Icon
                 as={Arrow}

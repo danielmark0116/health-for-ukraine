@@ -13,8 +13,16 @@
     "moreInfo": "Więcej informacji",
     "needHelpLabel": "Kliknij!"
   },
+  "contactPage": {
+    "title": "Kontakt",
+    "orgMatters": "Dawid - Sprawy organizacyjne",
+    "technicalMatters": "Daniel – Sprawy techniczne",
+    "hintOnAppointments": "Kontakt ten nie dotyczy organizacji wizyt medycznych.",
+    "contactWithPlaces": "W sprawie wizyt medycznych należy bezpośrednio kontaktować się z placówkami z listy."
+  },
   "navigation": {
     "forRefugee": "Potrzebuję pomocy!",
-    "forMedic": "Chcę pomóc!"
+    "forMedic": "Chcę pomóc!",
+    "contact": "Kontakt"
   }
 }

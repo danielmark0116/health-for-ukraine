@@ -56,9 +56,9 @@ export default function MainRefugeeHero() {
             >
               {t("mainRefugeePage.ctaButton")}
             </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              {t("mainRefugeePage.moreInfo")}
-            </Button>
+            {/* <Button variant={"link"} colorScheme={"blue"} size={"sm"}> */}
+            {/*   {t("mainRefugeePage.moreInfo")} */}
+            {/* </Button> */}
             <Box>
               <Icon
                 as={Arrow}
