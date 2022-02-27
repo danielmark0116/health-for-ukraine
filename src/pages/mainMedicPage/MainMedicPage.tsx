@@ -1,6 +1,6 @@
 import MainMedicHero from "./components/MainMedicHero/MainMedicHero";
 
-export const MainMedic = () => {
+export const MainMedicPage = () => {
   return (
     <>
       <MainMedicHero />

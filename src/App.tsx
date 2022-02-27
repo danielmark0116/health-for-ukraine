@@ -1,11 +1,11 @@
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import { Layout } from "./layout/Layout";
-import { MainMedic } from "./pages/mainMedic/MainMedic";
 import translationsPL from "./locales/pl/translations.json";
 import translationsUA from "./locales/ua/translations.json";
 
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { Router } from "./navigation/Router";
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -28,9 +28,7 @@ i18n
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Layout>
-      <>
-        <MainMedic />
-      </>
+      <Router />
     </Layout>
   </ChakraProvider>
 );
