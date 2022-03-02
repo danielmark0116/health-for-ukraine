@@ -1,9 +1,9 @@
 import "./utils/i18n";
-import { ChakraProvider, theme } from "@chakra-ui/react";
 import { Router } from "./navigation/Router";
+import { GlobalProviders } from "./providers/GlobalProviders";
 
 export const App = () => (
-  <ChakraProvider theme={theme}>
+  <GlobalProviders>
     <Router />
-  </ChakraProvider>
+  </GlobalProviders>
 );

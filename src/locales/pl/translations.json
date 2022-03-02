@@ -24,5 +24,39 @@
     "forRefugee": "Potrzebuję pomocy!",
     "forMedic": "Chcę pomóc!",
     "contact": "Kontakt"
+  },
+  "voivodeships": {
+    "silesian": "Śląskie",
+    "lower-silesian": "Dolnośląskie",
+    "kuyavian-pomeranian": "Kujawsko - pomorskie",
+    "lublin": "Lubelskie",
+    "lubusz": "Lubuskie",
+    "lodz": "Łódzkie",
+    "lesser-poland": "Małopolskie",
+    "masovian": "Mazowieckie",
+    "opole": "Opolskie",
+    "subcarpathian": "Podkarpackie",
+    "podklaskie": "Podlaskie",
+    "pomeranian": "Pomorskie",
+    "holy-cross": "Świętokrzyskie",
+    "warmian-masurian": "Warmińsko - mazurskie",
+    "greater-poland": "Wielkopolskie",
+    "west-pomeranian": "Zachodnio - pomorskie"
+  },
+  "contact": "Kontakt",
+  "address": "Adres",
+  "language": "Język",
+  "professions": {
+    "doctor": "lekarz",
+    "dentist": "dentysta",
+    "nurse": "pielęgniarka / pielęgniarz",
+    "midwife": "położna",
+    "physio": "fizjoterapeuta",
+    "paramedic": "ratownik medyczny"
+  },
+  "serviceTypes": {
+    "phone": "teleporada",
+    "visit": "wizyta domowa",
+    "on-site": "na miejscu"
   }
 }

@@ -21,7 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { ColorModeSwitcher } from "../ColorModeSwitcher";
+import { ColorModeSwitcher } from "../components/ColorModeSwitcher/ColorModeSwitcher";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "../components/LanguageSwitcher/LanguageSwitcher";
 
