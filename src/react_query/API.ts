@@ -6,7 +6,9 @@ const POST = {
   institutions: "/api/institutions",
 } as const;
 
-export default {
+const API = {
   GET,
   POST,
 };
+
+export default API;
