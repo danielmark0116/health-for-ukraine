@@ -13,6 +13,42 @@
     "moreInfo": "Więcej informacji",
     "needHelpLabel": "Kliknij!"
   },
+  "addInstitutionPage": {
+    "title": "Add institution",
+    "subtitle": "Korzystając z formularza wyrażasz chęć udzielenia bezpłatnej pomocy medycznej obywatelom Ukrainy przebywającym na terytorium RP w ramach swojej praktyki. Przesyłając niniejszy formularz wyrażają Państwo zgodę na przetwarzanie danych osobowych oraz na udostępnienie informacji o możliwości skorzystania z bezpłatnej pomocy medycznej na naszej stronie www.healthforukraine.pl",
+    "successTitle": "Dodano placówkę medyczną!",
+    "successSubtitle": "Dziękujemy za zgłoszenie. Po wstępnej weryfikacji, twoje zgłoszenie zostanie dodane do systemu",
+    "form": {
+      "nameLabel": "Imię i nazwisko",
+      "nameHelper": "",
+      "emailLabel": "Adres e-mail",
+      "emailHelper": "Podaj poprawnie sformatowany adres e-mail",
+      "institutionNameLabel": "Nazwa placówki",
+      "institutionNameHelper": "NZOZ, Przychodnia etc",
+      "professionLabel": "Twoja profesja",
+      "professionPlaceholder": "...",
+      "professionHelper": "Lekarz, dentysta etc",
+      "specialtyLabel": "Specjalność",
+      "specialtyHelper": "Wybierz specjalność jeśli jesteś lekarzem",
+      "serviceTypeLabel": "Forma przyjmowania",
+      "serviceTypeHelper": "Wizyta domowa, teleporada, na miejscu",
+      "addressStringLabel": "Adres",
+      "addressStringHelper": "",
+      "voivodeshipLabel": "Wojewodztwo",
+      "voivodeshipHelper": "",
+      "cityLabel": "Miasto",
+      "cityHelper": "Staraj się wprowadzić jedno miasto, w poprawnej pisowni",
+      "postCodeLabel": "Kod pocztowy",
+      "postCodeHelper": "",
+      "contactDataLabel": "Dane kontaktowe",
+      "contactDataHelper": "Jak najlepiej się z Tobą skontaktować - adres e-mail, numer telefonu, etc.",
+      "hoursLabel": "Godziny przyjmowania",
+      "hoursHelper": "W jakich godzinach możliwa jest pomoc",
+      "languageInfoLabel": "Język komunikacji",
+      "languageInfoHelper": "Wybierz przynajmniej jeden",
+      "languageInfoPlaceholder": "..."
+    }
+  },
   "contactPage": {
     "title": "Kontakt",
     "orgMatters": "Dawid - Sprawy organizacyjne",
@@ -54,9 +90,41 @@
     "physio": "fizjoterapeuta",
     "paramedic": "ratownik medyczny"
   },
+  "specialities": {
+    "dentist": "Dentysta",
+    "internist": "Internista",
+    "cardiologist": "Kardiolog",
+    "neurologist": "Neurolog",
+    "pediatrician": "Pediatra",
+    "gynecologist": "Ginekolog",
+    "surgeon": "Chirurg",
+    "oncologist": "Onkolog",
+    "hematologist": "Hematolog",
+    "orthopaedist": "Ortopeda",
+    "psychiatrist": "Psychiatra"
+  },
+  "languages": {
+    "pl": "Polski",
+    "ua": "Ukraiński",
+    "en": "Angielski",
+    "de": "Niemiecki",
+    "ru": "Rosyjski"
+  },
   "serviceTypes": {
     "phone": "teleporada",
     "visit": "wizyta domowa",
     "on-site": "na miejscu"
-  }
+  },
+  "validation": {
+    "required": "Pole wymagane",
+    "email": "Niepoprawny format adesu e-mail",
+    "tooLong": "Za dużo znaków",
+    "tooShort": "Za mało znaków",
+    "incorrectProfession": "Niewłaściwa profesja",
+    "atLeastOne": "Wybierz przynajmniej jedną opcję",
+    "incorrectVoivodeship": "Niepoprawne województwo"
+  },
+  "submit": "Wyślij!",
+  "genericError": "Coś poszo nie tak...",
+  "ok": "Ok"
 }

@@ -11,7 +11,6 @@ import {
   createIcon,
 } from "@chakra-ui/react";
 import { Trans, useTranslation } from "react-i18next";
-import { MEDIC_GOOGLE_REGISTRATION_FORM } from "../../../../constants/medicForm";
 
 export default function MainMedicHero() {
   const { t } = useTranslation();
@@ -46,7 +45,8 @@ export default function MainMedicHero() {
           >
             <Button
               as={Link}
-              href={MEDIC_GOOGLE_REGISTRATION_FORM}
+              // href={MEDIC_GOOGLE_REGISTRATION_FORM}
+              href="/institutions/add"
               colorScheme={"green"}
               bg={"green.400"}
               rounded={"full"}

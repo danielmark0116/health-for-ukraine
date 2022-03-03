@@ -1,0 +1,18 @@
+export const voivodeships = [
+  "lower-silesian",
+  "kuyavian-pomeranian",
+  "lublin",
+  "lubusz",
+  "lodz",
+  "lesser-poland",
+  "masovian",
+  "opole",
+  "subcarpathian",
+  "podklaskie",
+  "pomeranian",
+  "silesian",
+  "holy-cross",
+  "warmian-masurian",
+  "greater-poland",
+  "west-pomeranian",
+] as const;

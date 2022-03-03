@@ -19,6 +19,8 @@ interface Props {
 }
 
 export const MedicalPlaceCard = ({ institution }: Props) => {
+  const color = useColorModeValue("gray.50", "gray.800");
+  const languageBgColor = useColorModeValue("blue.100", "blue.500");
   const { t } = useTranslation();
   const {
     voivodeship,
@@ -27,11 +29,11 @@ export const MedicalPlaceCard = ({ institution }: Props) => {
     email,
     hours,
     postCode,
-    specialty,
+    speciality,
     profession,
     contactData,
     serviceType,
-    languageInfo,
+    languages,
     addressString,
     institutionName,
   } = institution;
@@ -73,40 +75,45 @@ export const MedicalPlaceCard = ({ institution }: Props) => {
           <Badge
             px={2}
             py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
+            bg={useColorModeValue("green.400", "green.800")}
+            color="white"
+            fontWeight={"700"}
           >
-            {t(`professions.${profession}`)}
+            {t(`professions.${profession}` as any)}
           </Badge>
           <Badge
             px={2}
             py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
+            display={speciality ? "flex" : "none"}
+            bg={useColorModeValue("green.400", "green.800")}
+            color="white"
+            fontWeight={"700"}
           >
-            {t(`serviceTypes.${serviceType}`)}
+            {t(`specialities.${speciality}` as any)}
           </Badge>
         </Stack>
 
         <Stack align={"center"} justify={"center"} direction={"row"} mt={2}>
-          <Badge
-            px={2}
-            py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
-          >
-            {t("language") + ": " + languageInfo}
-          </Badge>
+          {serviceType.map((st) => (
+            <Badge key={st} px={2} py={1} bg={color} fontWeight={"400"}>
+              {t(`serviceTypes.${st}` as any)}
+            </Badge>
+          ))}
         </Stack>
 
-        <Text
-          mt={4}
-          textAlign={"left"}
-          color={useColorModeValue("gray.700", "gray.400")}
-          fontSize={"sm"}
-        >
-          {specialty}
-        </Text>
+        <Stack align={"center"} justify={"center"} direction={"row"} mt={2}>
+          {languages.map((l) => (
+            <Badge
+              key={l}
+              px={2}
+              py={1}
+              bg={languageBgColor}
+              fontWeight={"400"}
+            >
+              {t(`languages.${l}` as any)}
+            </Badge>
+          ))}
+        </Stack>
 
         <SimpleGrid columns={[1, null, 2]} spacing={"40px"} mt={6}>
           <Box w="100%">
@@ -132,7 +139,7 @@ export const MedicalPlaceCard = ({ institution }: Props) => {
               fontSize={"sm"}
               color={useColorModeValue("gray.700", "gray.400")}
             >
-              {t(`voivodeships.${voivodeship}`)}
+              {t(`voivodeships.${voivodeship}` as any)}
             </Text>
           </Box>
 
