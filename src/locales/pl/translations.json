@@ -49,6 +49,11 @@
       "languageInfoPlaceholder": "..."
     }
   },
+  "institutionsListPage": {
+    "filters": {
+      "voivodeshipHelper": "Wybierz województwo w którym szukasz pomocy"
+    }
+  },
   "contactPage": {
     "title": "Kontakt",
     "orgMatters": "Dawid - Sprawy organizacyjne",
@@ -62,6 +67,7 @@
     "contact": "Kontakt"
   },
   "voivodeships": {
+    "all": "Wszystkie",
     "silesian": "Śląskie",
     "lower-silesian": "Dolnośląskie",
     "kuyavian-pomeranian": "Kujawsko - pomorskie",
@@ -126,5 +132,6 @@
   },
   "submit": "Wyślij!",
   "genericError": "Coś poszo nie tak...",
-  "ok": "Ok"
+  "ok": "Ok",
+  "voivodeship": "Województwo"
 }
