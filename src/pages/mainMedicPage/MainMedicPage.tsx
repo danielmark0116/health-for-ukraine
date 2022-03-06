@@ -14,6 +14,10 @@ export const MainMedicPage = () => {
         Udostępnione zostaną dane specjalistów, którzy oferują bezpłatną
         ambulatoryjną pomoc medyczną w ramach swoich praktyk.
       </Text>
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };

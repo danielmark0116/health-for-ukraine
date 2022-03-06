@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import {
@@ -24,6 +25,7 @@ import {
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher/ColorModeSwitcher";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "../components/LanguageSwitcher/LanguageSwitcher";
+import LogoPic from "../assets/logo_400x400.png";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -40,12 +42,11 @@ export default function Navbar() {
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
+        alignItems={"center"}
       >
         <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
+          flex={{ base: 1, md: 1, lg: "auto" }}
+          display={{ base: "flex", md: "flex", lg: "none" }}
         >
           <IconButton
             onClick={onToggle}
@@ -56,53 +57,37 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex
+          flex={{ base: 1, md: 1, lg: 2 }}
+          justify={{ base: "center", md: "center", lg: "start" }}
+        >
           <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
+            textAlign={useBreakpointValue({
+              base: "center",
+              md: "center",
+              lg: "left",
+            })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            {"🩺🇺🇦"}
+            <Image height={14} mt={-1} src={LogoPic} />
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex
+            alignItems="center"
+            display={{ base: "none", md: "none", lg: "flex" }}
+            ml={10}
+          >
             <DesktopNav />
           </Flex>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          {/* <Button */}
-          {/*   as={"a"} */}
-          {/*   fontSize={"sm"} */}
-          {/*   fontWeight={400} */}
-          {/*   variant={"link"} */}
-          {/*   href={"#"} */}
-          {/* > */}
-          {/*   Sign In */}
-          {/* </Button> */}
-          {/* <Button */}
-          {/*   display={{ base: "none", md: "inline-flex" }} */}
-          {/*   fontSize={"sm"} */}
-          {/*   fontWeight={600} */}
-          {/*   color={"white"} */}
-          {/*   bg={"pink.400"} */}
-          {/*   // href={'#'} */}
-          {/*   _hover={{ */}
-          {/*     bg: "pink.300", */}
-          {/*   }} */}
-          {/* > */}
-          {/*   Sign Up */}
-          {/* </Button> */}
-        </Stack>
-        <Box display={{ base: "none", md: "inline-flex" }}>
+        <Flex flex={{ base: 1, md: 1, lg: "auto" }} justify={"flex-end"}>
           <LanguageSwitcher />
-        </Box>
-        <ColorModeSwitcher display={{ base: "none", md: "inline-flex" }} />
+          <ColorModeSwitcher
+            display={{ base: "none", md: "none", lg: "inline-flex" }}
+          />
+        </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -221,15 +206,12 @@ const MobileNav = ({ onClick }: any) => {
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       zIndex={1000}
-      display={{ md: "none" }}
+      display={{ lg: "none" }}
     >
       <ColorModeSwitcher justifySelf="flex-end" />
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem onClick={onClick} key={navItem.label} {...navItem} />
       ))}
-      <Box display={{ base: "inline-flex", md: "none" }}>
-        <LanguageSwitcher />
-      </Box>
     </Stack>
   );
 };

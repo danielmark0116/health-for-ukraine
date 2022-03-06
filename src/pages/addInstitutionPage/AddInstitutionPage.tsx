@@ -15,6 +15,7 @@ export const AddInstitutionPage = () => {
         <Divider pt={4} mb={8} />
         <Box mt={8} h={1} />
         <AddInstituteForm />
+        <Box pt={20} h={1} />
       </VStack>
     </Box>
   );
