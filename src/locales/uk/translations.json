@@ -1,0 +1,137 @@
+{
+  "addInstitutionPage": {
+    "form": {
+      "addressStringHelper": "",
+      "addressStringLabel": "адреса",
+      "cityHelper": "Staraj się wprowadzić jedno miasto, w poprawnej pisowni",
+      "cityLabel": "Miasto",
+      "contactDataHelper": "Jak najlepiej się z Tobą skontaktować - adres e-mail, numer telefonu, etc.",
+      "contactDataLabel": "Dane kontaktowe",
+      "emailHelper": "Podaj poprawnie sformatowany adres e-mail",
+      "emailLabel": "Adres e-mail",
+      "hoursHelper": "W jakich godzinach możliwa jest pomoc",
+      "hoursLabel": "Godziny przyjmowania",
+      "institutionNameHelper": "NZOZ, Przychodnia etc",
+      "institutionNameLabel": "Nazwa placówki",
+      "languageInfoHelper": "Wybierz przynajmniej jeden",
+      "languageInfoLabel": "Język komunikacji",
+      "languageInfoPlaceholder": "...",
+      "nameHelper": "",
+      "nameLabel": "Imię i nazwisko",
+      "postCodeHelper": "",
+      "postCodeLabel": "Kod pocztowy",
+      "professionHelper": "Lekarz, dentysta etc",
+      "professionLabel": "Twoja profesja",
+      "professionPlaceholder": "...",
+      "serviceTypeHelper": "Wizyta domowa, teleporada, na miejscu",
+      "serviceTypeLabel": "Forma przyjmowania",
+      "specialtyHelper": "Wybierz specjalność jeśli jesteś lekarzem",
+      "specialtyLabel": "Specjalność",
+      "voivodeshipHelper": "",
+      "voivodeshipLabel": "Wojewodztwo"
+    },
+    "subtitle": "Korzystając z formularza wyrażasz chęć udzielenia bezpłatnej pomocy medycznej obywatelom Ukrainy przebywającym na terytorium RP w ramach swojej praktyki. Przesyłając niniejszy formularz wyrażają Państwo zgodę na przetwarzanie danych osobowych oraz na udostępnienie informacji o możliwości skorzystania z bezpłatnej pomocy medycznej na naszej stronie www.healthforukraine.pl",
+    "successSubtitle": "Dziękujemy za zgłoszenie. Po wstępnej weryfikacji, twoje zgłoszenie zostanie dodane do systemu",
+    "successTitle": "Dodano placówkę medyczną!",
+    "title": "Add institution"
+  },
+  "address": "Adres",
+  "contact": "Kontakt",
+  "contactPage": {
+    "contactWithPlaces": "W sprawie wizyt medycznych należy bezpośrednio kontaktować się z placówkami z listy.",
+    "hintOnAppointments": "Kontakt ten nie dotyczy organizacji wizyt medycznych.",
+    "orgMatters": "Dawid - Sprawy organizacyjne",
+    "technicalMatters": "Daniel – Sprawy techniczne",
+    "title": "Kontakt"
+  },
+  "genericError": "Coś poszo nie tak...",
+  "institutionsListPage": {
+    "filters": {
+      "voivodeshipHelper": "Wybierz województwo w którym szukasz pomocy"
+    }
+  },
+  "language": "Język",
+  "languages": {
+    "de": "Niemiecki",
+    "en": "Angielski",
+    "pl": "Polski",
+    "ru": "Rosyjski",
+    "ua": "Ukraiński"
+  },
+  "mainMedicPage": {
+    "ctaButton": "Formularz!",
+    "heroSubtitle": "Wypełnij formularz",
+    "heroTitle": "Jesteś medykiem i <1 /><2>chcesz pomóc?</2>",
+    "moreInfo": "Więcej informacji",
+    "wannaHelpLabel": "I want to help!"
+  },
+  "mainRefugeePage": {
+    "ctaButton": "Znajdź pomoc!",
+    "heroSubtitle": "Sprawdź placówki w których uzyskasz darmową pomoc!",
+    "heroTitle": "Przyjechałem do Polski i <1 /><2>potrzebuję pomocy</2>",
+    "moreInfo": "Więcej informacji",
+    "needHelpLabel": "Kliknij!"
+  },
+  "navigation": {
+    "contact": "Kontakt",
+    "forMedic": "Chcę pomóc!",
+    "forRefugee": "Potrzebuję pomocy!"
+  },
+  "ok": "Ok",
+  "professions": {
+    "dentist": "dentysta",
+    "doctor": "lekarz",
+    "midwife": "położna",
+    "nurse": "pielęgniarka / pielęgniarz",
+    "paramedic": "ratownik medyczny",
+    "physio": "fizjoterapeuta"
+  },
+  "serviceTypes": {
+    "on-site": "na miejscu",
+    "phone": "teleporada",
+    "visit": "wizyta domowa"
+  },
+  "specialities": {
+    "cardiologist": "Kardiolog",
+    "dentist": "Dentysta",
+    "gynecologist": "Ginekolog",
+    "hematologist": "Hematolog",
+    "internist": "Internista",
+    "neurologist": "Neurolog",
+    "oncologist": "Onkolog",
+    "orthopaedist": "Ortopeda",
+    "pediatrician": "Pediatra",
+    "psychiatrist": "Psychiatra",
+    "surgeon": "Chirurg"
+  },
+  "submit": "Wyślij!",
+  "validation": {
+    "atLeastOne": "Wybierz przynajmniej jedną opcję",
+    "email": "Niepoprawny format adesu e-mail",
+    "incorrectProfession": "Niewłaściwa profesja",
+    "incorrectVoivodeship": "Niepoprawne województwo",
+    "required": "Pole wymagane",
+    "tooLong": "Za dużo znaków",
+    "tooShort": "Za mało znaków"
+  },
+  "voivodeship": "Województwo",
+  "voivodeships": {
+    "all": "Wszystkie",
+    "greater-poland": "Wielkopolskie",
+    "holy-cross": "Świętokrzyskie",
+    "kuyavian-pomeranian": "Kujawsko - pomorskie",
+    "lesser-poland": "Małopolskie",
+    "lodz": "Łódzkie",
+    "lower-silesian": "Dolnośląskie",
+    "lublin": "Lubelskie",
+    "lubusz": "Lubuskie",
+    "masovian": "Mazowieckie",
+    "opole": "Opolskie",
+    "podklaskie": "Podlaskie",
+    "pomeranian": "Pomorskie",
+    "silesian": "Śląskie",
+    "subcarpathian": "Podkarpackie",
+    "warmian-masurian": "Warmińsko - mazurskie",
+    "west-pomeranian": "Zachodnio - pomorskie"
+  }
+}
