@@ -10,7 +10,7 @@ const items: { lang: Languages; emoji: string }[] = [
     emoji: "🇵🇱",
   },
   {
-    lang: "ua",
+    lang: "uk",
     emoji: "🇺🇦",
   },
 ];
