@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import i18n from "../utils/i18n";
 
-export const allowedLanguages = ["ua", "pl"] as const;
+export const allowedLanguages = ["uk", "pl"] as const;
 export type Languages = typeof allowedLanguages[number];
 const LANG_STORAGE_KEY = "i18nextLng";
 

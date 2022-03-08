@@ -1,5 +1,5 @@
 import translationsPL from "../locales/pl/translations.json";
-import translationsUA from "../locales/ua/translations.json";
+import translationsUK from "../locales/uk/translations.json";
 import detector from "i18next-browser-languagedetector";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -17,7 +17,7 @@ i18n
         translation: translationsPL,
       },
       ua: {
-        translation: translationsUA,
+        translation: translationsUK,
       },
     },
     fallbackLng: "pl",
