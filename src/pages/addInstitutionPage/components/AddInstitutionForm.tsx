@@ -16,6 +16,7 @@ import { serviceTypes } from "../../../constants/serviceTypes";
 import { specialities } from "../../../constants/specialities";
 import { useCreateInstitution } from "../../../react_query/mutations/useCreateInstitution";
 import { Result } from "../../../components/Result/Result";
+import { ControlledHereApiAutocomplete } from "../../../components/HereApiAutocomplete/ControlledHereApiAutocomplete";
 
 export const AddInstituteForm = () => {
   const {
@@ -36,7 +37,7 @@ export const AddInstituteForm = () => {
   const handleSubmit = (data: InstitutionForm) => {
     (async () => {
       try {
-        await createInstitution(data);
+        await createInstitution({ ...data, city: data.locationId });
         form.reset();
       } catch (e) {
         //
@@ -145,8 +146,8 @@ export const AddInstituteForm = () => {
             label: t(`voivodeships.${v}` as any),
           }))}
         />
-        <ControlledCustomTextInput<InstitutionForm>
-          name="city"
+        <ControlledHereApiAutocomplete<InstitutionForm>
+          name="locationId"
           labelText={t("addInstitutionPage.form.cityLabel")}
           helperText={t("addInstitutionPage.form.cityHelper")}
         />
