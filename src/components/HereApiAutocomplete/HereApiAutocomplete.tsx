@@ -4,7 +4,6 @@ import {
   CustomAutocomplete,
   CustomAutocompleteProps,
 } from "../CustomAutocomplete/CustomAutocomplete";
-import _throttle from "lodash.throttle";
 import { useDebouncedValue } from "../../hooks/useDebouncedValue";
 
 export interface HereApiAutocompleteProps
