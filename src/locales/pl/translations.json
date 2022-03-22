@@ -37,7 +37,7 @@
       "voivodeshipLabel": "Wojewodztwo",
       "voivodeshipHelper": "",
       "cityLabel": "Miasto",
-      "cityHelper": "Staraj się wprowadzić jedno miasto, w poprawnej pisowni",
+      "cityHelper": "Zacznij pisać i wyszukaj miasto",
       "postCodeLabel": "Kod pocztowy",
       "postCodeHelper": "",
       "contactDataLabel": "Dane kontaktowe",
@@ -50,6 +50,8 @@
     }
   },
   "institutionsListPage": {
+    "noData": "Brak placówek",
+    "tryDifferentFilters": "Brak placówek dla podanych parametrów, spróbuj użyć innych filtrów",
     "filters": {
       "voivodeshipHelper": "Wybierz województwo w którym szukasz pomocy"
     }
@@ -133,5 +135,6 @@
   "submit": "Wyślij!",
   "genericError": "Coś poszo nie tak...",
   "ok": "Ok",
-  "voivodeship": "Województwo"
+  "voivodeship": "Województwo",
+  "notFound": "Nie znaleziono..."
 }
