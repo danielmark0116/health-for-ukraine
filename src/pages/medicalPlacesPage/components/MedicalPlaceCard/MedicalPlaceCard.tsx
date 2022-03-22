@@ -38,6 +38,8 @@ export const MedicalPlaceCard = ({ institution }: Props) => {
     institutionName,
   } = institution;
 
+  const location = institution?.location ?? null;
+
   return (
     <Center py={4}>
       <Box
@@ -120,6 +122,14 @@ export const MedicalPlaceCard = ({ institution }: Props) => {
             <Heading textAlign="left" as="h6" size="md" mb={2}>
               {t("address")}
             </Heading>
+            <Text
+              textAlign={"left"}
+              fontWeight="600"
+              color={useColorModeValue("gray.700", "gray.400")}
+              fontSize={"md"}
+            >
+              {location?.title || ""}
+            </Text>
             <Text
               textAlign={"left"}
               color={useColorModeValue("gray.700", "gray.400")}

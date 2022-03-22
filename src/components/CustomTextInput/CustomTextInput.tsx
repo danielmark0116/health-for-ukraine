@@ -29,8 +29,9 @@ export const CustomTextInput = ({
 }: PropsWithChildren<CustomTextInputProps>) => {
   const [input, setInput] = useState("");
 
-  const handleInputChange = (e: SyntheticEvent) =>
+  const handleInputChange = (e: SyntheticEvent) => {
     setInput(e.currentTarget.nodeValue || "");
+  };
 
   return (
     <FormControl textAlign={"left"} isInvalid={isError} pb={4}>

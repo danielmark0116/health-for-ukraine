@@ -31,10 +31,8 @@ export const InstitutionSchema = z.object({
     .min(3, { message: "validation.tooShort" })
     .max(200, { message: "validation.tooLong" }),
   voivodeship: z.enum(voivodeships),
-  city: z
-    .string({ required_error: "validation.required" })
-    .min(3, { message: "validation.tooShort" })
-    .max(200, { message: "validation.tooLong" }),
+  locationId: z.string({ required_error: "validation.required" }),
+  city: z.string().optional(),
   postCode: z
     .string({ required_error: "validation.required" })
     .min(5, { message: "validation.tooShort" })

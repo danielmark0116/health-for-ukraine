@@ -1,5 +1,6 @@
 const GET = {
   institutions: "/api/institutions",
+  searchCities: (queryString = "") => `/api/search/cities?text=${queryString}`,
 } as const;
 
 const POST = {
